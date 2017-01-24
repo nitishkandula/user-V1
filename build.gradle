@@ -28,7 +28,7 @@ repositories {
 mainClassName = "com.nitish.UserApplication"
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-
+applicationDefaultJvmArgs =["-Dapi-env=development"]
 dependencies {
     // tag::jetty[]
     compile("org.springframework.boot:spring-boot-starter-web") {

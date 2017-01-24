@@ -37,9 +37,9 @@ public class UserApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) throws IOException {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        String propertyFilePath = "./config/application.properties";
-        if(System.getenv("API_ENV").equalsIgnoreCase("production")){
-            propertyFilePath = "/opt/config/applicaton.properties";
+        String propertyFilePath = "/opt/config/applicaton.properties";
+        if(System.getProperty("api-env").equalsIgnoreCase("development")){
+            propertyFilePath = "./config/application.properties";
         }
         InputStream input = new FileInputStream(propertyFilePath);
         Properties properties = new Properties();
